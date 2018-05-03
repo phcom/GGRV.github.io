@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About
+title: Documentation
 permalink: /about/
 ---
 
-Some information about you!
+Some documentation about IntP!
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+A place to include any other types of information that you'd like to include about IntP.
 
-### Contact me
+### Contact
 
 [email@domain.com](mailto:email@domain.com)
