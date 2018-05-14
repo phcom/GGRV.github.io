@@ -6,7 +6,7 @@
 name: IntP - Interference Profiler
 
 # Short bio or description (displayed in the header)
-description: a instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. 
+description: A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://github.com/NatanaelKun/NatanaelKun.github.io/blob/master/Storage-Server-.jpg
