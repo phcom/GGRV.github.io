@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About – IntP - Resource-driven Profiler – A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="IntP measures the amount of noise an application is susceptible and the interference applications causes one another, but also points out which source of noise is more disturbing performance. This instrumentation enables accurate prediction of the performance degradation that results from contention on shared resources. In addition, it provides outputs for better application placement strategies, which makes datacenter resource efficient and more cost effective.
+
+" />
+    <meta property="og:description" content="IntP measures the amount of noise an application is susceptible and the interference applications causes one another, but also points out which source of noise is more disturbing performance. This instrumentation enables accurate prediction of the performance degradation that results from contention on shared resources. In addition, it provides outputs for better application placement strategies, which makes datacenter resource efficient and more cost effective.
+
+" />
+    
+    <meta name="author" content="IntP - Resource-driven Profiler" />
+
+    
+    <meta property="og:title" content="About" />
+    <meta property="twitter:title" content="About" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="IntP - Resource-driven Profiler - A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">IntP - Resource-driven Profiler</a></h1>
+            <p class="site-description"> A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. 
+              </p>
+          </div>
+
+          <nav>
+            <a href="/">Home</a>
+            <a href="/Documentation">Documentation</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>About</h1>
+
+  <div class="entry">
+    <p>IntP measures the amount of noise an application is susceptible and the interference applications causes one another, but also points out which source of noise is more disturbing performance. This instrumentation enables accurate prediction of the performance degradation that results from contention on shared resources. In addition, it provides outputs for better application placement strategies, which makes datacenter resource efficient and more cost effective.</p>
+
+<p>IntP not only quantify the interference application’s tasks cause on hardware resources but also provides insights about application demands during runtime. Since such an application has been instrumented, the users are capable of deciding which piece of hardware is more likely to be the bottleneck and take a decision about the queued application that best interleaves with it. Or if one application starts to affect others, it could be migrated to other machines to minimize interference and maximize performance.</p>
+
+<h2 id="manual-installation">Manual Installation</h2>
+
+<h4 id="requirements">Requirements:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- gcc
+- systemtap
+- systemtap-runtime
+- Linux Kernel 4.4.0-75 
+</code></pre></div></div>
+
+<p>Install Linux Kernel on Ubuntu Server 16.04-2: <a href="https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic">view download page</a></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://ddebs.ubuntu.com/pool/main/l/linux/linux-image-4.4.0-75-generic-dbgsym4.4.0−75.96amd64.ddeb
+
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
+</code></pre></div></div>
+
+<h4 id="installation">Installation:</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>linux-headers-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-devel-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-debuginfo-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
+
+</code></pre></div></div>
+
+<p>In order to test the whole installation package:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> stap  <span class="nt">-e</span>  ’probe  begin   <span class="nb">printf</span><span class="o">(</span>”Hello,  World!”<span class="o">)</span><span class="p">;</span>
+ <span class="nb">exit</span><span class="o">()</span> 
+</code></pre></div></div>
+
+<h3 id="execution">Execution</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-debuginfo-common-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-m</span><span class="k">)</span>-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
+
+stap –suppress-handler-errors <span class="nt">-g</span> son0.stp ApplicationName
+</code></pre></div></div>
+
+  </div>
+
+  <div class="date">
+    No copyright infringement May 11, 2018
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/NatanaelKun/NatanaelKun.github.io"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
