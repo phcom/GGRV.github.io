@@ -1,9 +1,8 @@
 ---
 layout: page
+title: Manual Installation
 permalink: /Documentation/
 ---
-
-## Manual Installation
 
 #### Requirements:
 
