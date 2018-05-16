@@ -42,8 +42,3 @@ sudo apt-get install kernel-debuginfo-common-$(uname -m)-$(uname -r)
 
 stap –suppress-handler-errors -g son0.stp ApplicationName
 ```
-
-### Contact
-
-[Prof. Dr. César Augusto Fonticielha De Rose](mailto:cesar.derose@pucrs.br)  
-[Prof. Dr. Miguel Gomes Xavier](mailto:miguel.xavier@pucrs.br)
