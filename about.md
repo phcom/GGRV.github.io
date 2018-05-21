@@ -5,7 +5,7 @@ permalink: /Documentation/
 ---
 
 #### Requirements:
-    - Linux Kernel 4.4.0-75
+    - linux kernel 4.4.0-75
     - dbgsym
     - make
     - g++
