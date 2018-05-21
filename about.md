@@ -7,25 +7,24 @@ permalink: /Documentation/
 #### Requirements:
     - make
     - g++
-    - systemtap - 3.1
-    - dbgsym
     - Linux Kernel 4.4.0-75
+    - dbgsym
+    - systemtap - 3.1
+    
+    
 
-##### Installing g++:
+##### Installing make and g++:
 ```shell
 sudo apt-get install make
 sudo apt-get install g++
 ```
-##### Installing systemtap:
-Download systemtap 3.1 [download page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
+
+###### Installing Linux Headers: 
 
 ```shell
-wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
-tar xvzf systemtap-3.1.tar.gz
+apt-get install linux-image-4.4.0-75-generic
+apt-get install fdutils linux-source-4.4.0 linux-headers-4.4.0-75-generic
 ```
-Inside systemtap folder use the command make
-
-On the folder /tmp/systemtap-3.1 make install
 
 ##### Installing dgbsym
 
@@ -43,22 +42,20 @@ sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
 
 ```
 
-##### Installing Linux Kernel:
-Installing Linux Kernel on Ubuntu Server 16.04-2: [view download page](https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic)
-
+##### Installing systemtap:
+Download systemtap 3.1 [download page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
 
 ```shell
-sudo apt-get install linux-image-4.4.0-75-generic
-wget http://mirrors.kernel.org/ubuntu/pool/main/l/linux-lts-xenial/linux-image-4.4.0-75-generic_4.4.0-75.96~14.04.1_amd64.deb
-
-sudo dpkg -i linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
+wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
+tar xvzf systemtap-3.1.tar.gz
 ```
+Inside systemtap folder use the command make
+
+On the folder /tmp/systemtap-3.1 make install
+
 
 #### Installation:
 
-```shell
-apt-get install fdutils linux-source-4.4.0 linux-headers-4.4.0-75-generic
-```
 
 In order to test the whole installation package:
 
