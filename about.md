@@ -5,19 +5,13 @@ permalink: /Documentation/
 ---
 
 #### Requirements:
-    - make
-    - g++
     - Linux Kernel 4.4.0-75
     - dbgsym
+    - make
+    - g++
+    - python
     - systemtap - 3.1
     
-    
-
-##### Installing make and g++:
-```shell
-sudo apt-get install make
-sudo apt-get install g++
-```
 
 ###### Installing Linux Headers: 
 
@@ -41,6 +35,11 @@ sudo apt-get update
 sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
 
 ```
+##### Installing make and g++:
+```shell
+sudo apt-get install make
+sudo apt-get install g++
+```
 
 ##### Installing systemtap:
 Download systemtap 3.1 [download page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
@@ -48,14 +47,17 @@ Download systemtap 3.1 [download page](https://sourceware.org/systemtap/ftp/rele
 ```shell
 wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
 tar xvzf systemtap-3.1.tar.gz
+
+cd systemtap-3.1
+sudo apt-get install gettext
+apt-get install libdw-dev
+
+./configure
+make
+make install
 ```
-Inside systemtap folder use the command make
-
-On the folder /tmp/systemtap-3.1 make install
-
 
 #### Installation:
-
 
 In order to test the whole installation package:
 
