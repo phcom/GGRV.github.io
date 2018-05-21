@@ -5,7 +5,7 @@ permalink: /Documentation/
 ---
 
 #### Requirements:
-
+    - make
     - g++
     - systemtap - 3.1
     - dbgsym
@@ -13,6 +13,7 @@ permalink: /Documentation/
 
 ##### Installing g++:
 ```shell
+sudo apt-get install make
 sudo apt-get install g++
 ```
 ##### Installing systemtap:
