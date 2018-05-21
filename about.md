@@ -20,7 +20,7 @@ apt-get install linux-image-4.4.0-75-generic
 apt-get install fdutils linux-source-4.4.0 linux-headers-4.4.0-75-generic
 ```
 
-##### Installing dgbsym
+##### Installing dgbsym:
 
 ```shell
 echo "deb http://ddebs.ubuntu.com $(lsb_release -cs) main restricted universe multiverse
@@ -39,6 +39,7 @@ sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
 ```shell
 sudo apt-get install make
 sudo apt-get install g++
+sudo apt-get install python
 ```
 
 ##### Installing systemtap:
@@ -53,6 +54,7 @@ sudo apt-get install gettext
 apt-get install libdw-dev
 
 ./configure
+sudo su
 make
 make install
 ```
