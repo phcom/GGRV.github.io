@@ -14,7 +14,7 @@ permalink: /Documentation/
 Install Systemtap 3.1
 Download systemtap 3.1 [donwload page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
 
-```shel
+```shell
 wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
 tar systemtap-3.1.tar.gz
 ```
@@ -35,7 +35,7 @@ sudo dpkg -i linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
 
 Intall dgbsym
 
-```shel
+```shell
 echo "deb http://ddebs.ubuntu.com $(lsb_release -cs) main restricted universe multiverse
 deb http://ddebs.ubuntu.com $(lsb_release -cs)-updates main restricted universe multiverse
 deb http://ddebs.ubuntu.com $(lsb_release -cs)-proposed main restricted universe multiverse" | \
@@ -46,6 +46,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 428D7C01 C8CAB6595
 sudo apt-get update
 
 sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
+
 ```
 
 
