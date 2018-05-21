@@ -11,19 +11,23 @@ permalink: /Documentation/
     - dbgsym
     - Linux Kernel 4.4.0-75
 
-Install Systemtap 3.1
-Download systemtap 3.1 [donwload page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
+
+```shell
+sudo apt-get install g++
+```
+##### Installing systemtap:
+Download systemtap 3.1 [download page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
 
 ```shell
 wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
 tar systemtap-3.1.tar.gz
 ```
-On systemtap folder use comando make
+Inside systemtap folder use the command make
 
 On the folder /tmp/systemtap-3.1 make install
 
-
-Install Linux Kernel on Ubuntu Server 16.04-2: [view download page](https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic)
+##### Installing Linux Kernel:
+Installing Linux Kernel on Ubuntu Server 16.04-2: [view download page](https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic)
 
 
 ```shell
@@ -33,7 +37,7 @@ wget http://mirrors.kernel.org/ubuntu/pool/main/l/linux-lts-xenial/linux-image-4
 sudo dpkg -i linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
 ```
 
-Intall dgbsym
+##### Installing dgbsym
 
 ```shell
 echo "deb http://ddebs.ubuntu.com $(lsb_release -cs) main restricted universe multiverse
