@@ -43,7 +43,7 @@ sudo apt-get install python
 ```
 
 ##### Installing systemtap:
-Download systemtap 3.1 [download page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
+Download systemtap 3.1 [view download page](https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz)
 
 ```shell
 wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
