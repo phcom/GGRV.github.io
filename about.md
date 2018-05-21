@@ -26,17 +26,6 @@ Inside systemtap folder use the command make
 
 On the folder /tmp/systemtap-3.1 make install
 
-##### Installing Linux Kernel:
-Installing Linux Kernel on Ubuntu Server 16.04-2: [view download page](https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic)
-
-
-```shell
-sudo apt-get install linux-image-4.4.0-75-generic
-wget http://mirrors.kernel.org/ubuntu/pool/main/l/linux-lts-xenial/linux-image-4.4.0-75-generic_4.4.0-75.96~14.04.1_amd64.deb
-
-sudo dpkg -i linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
-```
-
 ##### Installing dgbsym
 
 ```shell
@@ -53,6 +42,16 @@ sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
 
 ```
 
+##### Installing Linux Kernel:
+Installing Linux Kernel on Ubuntu Server 16.04-2: [view download page](https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic)
+
+
+```shell
+sudo apt-get install linux-image-4.4.0-75-generic
+wget http://mirrors.kernel.org/ubuntu/pool/main/l/linux-lts-xenial/linux-image-4.4.0-75-generic_4.4.0-75.96~14.04.1_amd64.deb
+
+sudo dpkg -i linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
+```
 
 #### Installation:
 
