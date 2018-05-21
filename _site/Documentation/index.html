@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Manual Installation – IntP - Resource-driven Profiler – A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.</title>
+    <title>Manual Installation – IntP - Resource-Driven Profiler – A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -12,7 +12,7 @@
     <meta name="description" content="A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.">
     <meta property="og:description" content="A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." />
     
-    <meta name="author" content="IntP - Resource-driven Profiler" />
+    <meta name="author" content="IntP - Resource-Driven Profiler" />
 
     
     <meta property="og:title" content="Manual Installation" />
@@ -24,7 +24,7 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="IntP - Resource-driven Profiler - A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="IntP - Resource-Driven Profiler - A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." href="/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -35,7 +35,7 @@
         <header class="masthead clearfix">
 
           <div class="site-info">
-            <h1 class="site-name"><a href="/">IntP - Resource-driven Profiler</a></h1>
+            <h1 class="site-name"><a href="/">IntP - Resource-Driven Profiler</a></h1>
             <p class="site-description"> A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. 
               </p>
           </div>
@@ -59,12 +59,17 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- gcc
 - systemtap
 - systemtap-runtime
-- Linux Kernel 4.4.0-75 
+- Linux Kernel 4.4.0-75
+</code></pre></div></div>
+
+<p>Install Systemtap</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>systemtap systemtap-runtime
 </code></pre></div></div>
 
 <p>Install Linux Kernel on Ubuntu Server 16.04-2: <a href="https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic">view download page</a></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://ddebs.ubuntu.com/pool/main/l/linux/linux-image-4.4.0-75-generic-dbgsym4.4.0−75.96amd64.ddeb
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>linux-image-4.4.0-75-generic
+wget http://mirrors.kernel.org/ubuntu/pool/main/l/linux-lts-xenial/linux-image-4.4.0-75-generic_4.4.0-75.96~14.04.1_amd64.deb
 
 <span class="nb">sudo </span>dpkg <span class="nt">-i</span> linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
 </code></pre></div></div>
@@ -84,11 +89,29 @@
 </code></pre></div></div>
 
 <h3 id="execution">Execution</h3>
-
+<p>It is important to note that you must run the command stap as root.</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-debuginfo-common-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-m</span><span class="k">)</span>-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
 
 stap –suppress-handler-errors <span class="nt">-g</span> son0.stp ApplicationName
 </code></pre></div></div>
+
+<h3 id="outputs">Outputs</h3>
+<p>Receiving Return:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>watch <span class="nt">-n2</span> <span class="nt">-d</span> <span class="nb">cat</span> /proc/systemtap/stap_<span class="k">*</span>/intestbench
+</code></pre></div></div>
+
+<p>IntP returns the interference metrics for CPU, disk, memory, network, and cache. More specifically, it returns the following metrics:</p>
+
+<ul>
+  <li>netp - percentage of physical network</li>
+  <li>nets - percentage of network queue interference.</li>
+  <li>blk - percentage of disk interference.</li>
+  <li>mbw - percentage of memory bus interference.</li>
+  <li>llcmr - percentage of cache miss.</li>
+  <li>llocc - percentage of cache interference.</li>
+  <li>cpu - percentage of cpu interference.</li>
+</ul>
 
   </div>
 </article>
