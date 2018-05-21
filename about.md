@@ -57,6 +57,9 @@ apt-get install libdw-dev
 sudo su
 make
 make install
+
+rm -rf /root/.systemstap/*.*
+reboot
 ```
 
 #### Installation:
