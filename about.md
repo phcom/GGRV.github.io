@@ -35,7 +35,7 @@ sudo apt-get update
 sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
 
 ```
-##### Installing make and g++:
+##### Installing make, g++ and python:
 ```shell
 sudo apt-get install make
 sudo apt-get install g++
