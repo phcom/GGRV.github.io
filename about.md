@@ -78,7 +78,9 @@ function gdrive_download () {
  wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$CONFIRM&id=$1" -O $2
  rm -rf /tmp/cookies.txt
 }
+```
 
+```shell
 gdrive_download 0B4kSFaKe-Rt9dnY2LThVWEZ1dEdjNTQ3UFdTclZmYUtQRFBB son.stp
 ```
 
