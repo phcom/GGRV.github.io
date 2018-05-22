@@ -81,7 +81,7 @@ function gdrive_download () {
 ```
 
 ```shell
-gdrive_download 0B4kSFaKe-Rt9dnY2LThVWEZ1dEdjNTQ3UFdTclZmYUtQRFBB son.stp
+gdrive_download 0B4kSFaKe-Rt9dnY2LThVWEZ1dEdjNTQ3UFdTclZmYUtQRFBB intp.stp
 ```
 
 ### Execution
