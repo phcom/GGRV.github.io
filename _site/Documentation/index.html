@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Manual Installation – IntP - Resource-Driven Profiler – A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.</title>
+    <title>Manual Installation – IntP - Resource-Driven Profiler – An instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,8 +9,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.">
-    <meta property="og:description" content="A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." />
+    <meta name="description" content="An instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem.">
+    <meta property="og:description" content="An instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." />
     
     <meta name="author" content="IntP - Resource-Driven Profiler" />
 
@@ -24,7 +24,7 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="IntP - Resource-Driven Profiler - A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="IntP - Resource-Driven Profiler - An instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem." href="/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -36,7 +36,7 @@
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">IntP - Resource-Driven Profiler</a></h1>
-            <p class="site-description"> A instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. 
+            <p class="site-description"> An instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. 
               </p>
           </div>
 
@@ -54,51 +54,92 @@
   <h1>Manual Installation</h1>
 
   <div class="entry">
-    <h4 id="requirements">Requirements:</h4>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- gcc
-- systemtap
-- systemtap-runtime
-- Linux Kernel 4.4.0-75
+    <h2 id="requirements">Requirements:</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Ubuntu Server 16.04.2
+- linux kernel 4.4.0-75
+- dbgsym
+- make
+- g++
+- python
+- systemtap - 3.1
 </code></pre></div></div>
 
-<p>Install Systemtap</p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>systemtap systemtap-runtime
+<h5 id="download-ubuntu-server-16042-download-link">Download Ubuntu Server 16.04.2: <a href="http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso">download link</a></h5>
+
+<h5 id="installing-linux-headers">Installing Linux Headers:</h5>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>linux-image-4.4.0-75-generic
+apt-get <span class="nb">install </span>fdutils linux-source-4.4.0 linux-headers-4.4.0-75-generic
 </code></pre></div></div>
 
-<p>Install Linux Kernel on Ubuntu Server 16.04-2: <a href="https://packages.ubuntu.com/xenial/linux-image-4.4.0-75-generic">view download page</a></p>
+<h5 id="installing-dgbsym">Installing dgbsym:</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>linux-image-4.4.0-75-generic
-wget http://mirrors.kernel.org/ubuntu/pool/main/l/linux-lts-xenial/linux-image-4.4.0-75-generic_4.4.0-75.96~14.04.1_amd64.deb
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"deb http://ddebs.ubuntu.com </span><span class="k">$(</span>lsb_release <span class="nt">-cs</span><span class="k">)</span><span class="s2"> main restricted universe multiverse
+deb http://ddebs.ubuntu.com </span><span class="k">$(</span>lsb_release <span class="nt">-cs</span><span class="k">)</span><span class="s2">-updates main restricted universe multiverse
+deb http://ddebs.ubuntu.com </span><span class="k">$(</span>lsb_release <span class="nt">-cs</span><span class="k">)</span><span class="s2">-proposed main restricted universe multiverse"</span> | <span class="se">\</span>
+<span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/sources.list.d/ddebs.list
 
-<span class="nb">sudo </span>dpkg <span class="nt">-i</span> linux-image-4.4.0-75-generic-dbgsym4.4.0-75.96amd64.ddeb
+<span class="nb">sudo </span>apt-key adv <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 428D7C01 C8CAB6595FDFF622
+
+<span class="nb">sudo </span>apt-get update
+
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>linux-image-4.4.0-75-generic-dbgsym
+
+</code></pre></div></div>
+<h5 id="installing-make-g-and-python">Installing make, g++ and python:</h5>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>make
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>g++
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>python
+</code></pre></div></div>
+
+<h5 id="installing-systemtap">Installing systemtap:</h5>
+<p>Download systemtap 3.1 <a href="https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz">[download file]</a></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://sourceware.org/systemtap/ftp/releases/systemtap-3.1.tar.gz
+<span class="nb">tar</span> <span class="nt">-xvzf</span> systemtap-3.1.tar.gz
+
+<span class="nb">cd </span>systemtap-3.1
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>gettext
+apt-get <span class="nb">install </span>libdw-dev
+
+./configure
+<span class="nb">sudo </span>su
+make
+make <span class="nb">install
+
+rm</span> <span class="nt">-rf</span> /root/.systemstap/<span class="k">*</span>.<span class="k">*</span>
+reboot
 </code></pre></div></div>
 
 <h4 id="installation">Installation:</h4>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>linux-headers-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-devel-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-debuginfo-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
-
-</code></pre></div></div>
-
 <p>In order to test the whole installation package:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> stap  <span class="nt">-e</span>  ’probe  begin   <span class="nb">printf</span><span class="o">(</span>”Hello,  World!”<span class="o">)</span><span class="p">;</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> stap  <span class="nt">-e</span>  ’probe  begin   <span class="nb">printf</span><span class="o">(</span>”Hello,  World!”<span class="o">)</span>’<span class="p">;</span>
  <span class="nb">exit</span><span class="o">()</span> 
 </code></pre></div></div>
 
-<h3 id="execution">Execution</h3>
-<p>It is important to note that you must run the command stap as root.</p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>kernel-debuginfo-common-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-m</span><span class="k">)</span>-<span class="k">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="k">)</span>
+<h4 id="downloading-intp">Downloading IntP:</h4>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>gdrive_download <span class="o">()</span> <span class="o">{</span>
+ <span class="nv">CONFIRM</span><span class="o">=</span><span class="k">$(</span>wget <span class="nt">--quiet</span> <span class="nt">--save-cookies</span> /tmp/cookies.txt <span class="nt">--keep-session-cookies</span> <span class="nt">--no-check-certificate</span> <span class="s2">"https://docs.google.com/uc?export=download&amp;id=</span><span class="nv">$1</span><span class="s2">"</span> <span class="nt">-O-</span> | <span class="nb">sed</span> <span class="nt">-rn</span> <span class="s1">'s/.*confirm=([0-9A-Za-z_]+).*/\1\n/p'</span><span class="k">)</span>
+ wget <span class="nt">--load-cookies</span> /tmp/cookies.txt <span class="s2">"https://docs.google.com/uc?export=download&amp;confirm=</span><span class="nv">$CONFIRM</span><span class="s2">&amp;id=</span><span class="nv">$1</span><span class="s2">"</span> <span class="nt">-O</span> <span class="nv">$2</span>
+ <span class="nb">rm</span> <span class="nt">-rf</span> /tmp/cookies.txt
+<span class="o">}</span>
+</code></pre></div></div>
 
-stap –suppress-handler-errors <span class="nt">-g</span> son0.stp ApplicationName
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdrive_download 0B4kSFaKe-Rt9dnY2LThVWEZ1dEdjNTQ3UFdTclZmYUtQRFBB intp.stp
+</code></pre></div></div>
+
+<h3 id="execution">Execution</h3>
+<p>Notice that you must run the command stap as root.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stap <span class="nt">--suppress-handler-errors</span> <span class="nt">-g</span> intp.stp ApplicationName
 </code></pre></div></div>
 
 <h3 id="outputs">Outputs</h3>
-<p>Receiving Return:</p>
+<p>Notice that you must run this command as root.<br />
+Receiving Return:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>watch <span class="nt">-n2</span> <span class="nt">-d</span> <span class="nb">cat</span> /proc/systemtap/stap_<span class="k">*</span>/intestbench
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watch <span class="nt">-n2</span> <span class="nt">-d</span> <span class="nb">cat</span> /proc/systemtap/stap_<span class="k">*</span>/intestbench
 </code></pre></div></div>
 
 <p>IntP returns the interference metrics for CPU, disk, memory, network, and cache. More specifically, it returns the following metrics:</p>
