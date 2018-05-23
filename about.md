@@ -4,7 +4,7 @@ title: Manual Installation
 permalink: /Documentation/
 ---
 
-#### Requirements:
+## Requirements:
     - Ubuntu Server 16.04.2
     - linux kernel 4.4.0-75
     - dbgsym
@@ -14,11 +14,11 @@ permalink: /Documentation/
     - systemtap - 3.1
     
 
-###### Download Ubuntu Server 16.04.2: 
+##### Download Ubuntu Server 16.04.2: 
 
 Download Ubuntu Server 16.04.2 [download link](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
 
-###### Installing Linux Headers: 
+##### Installing Linux Headers: 
 
 ```shell
 apt-get install linux-image-4.4.0-75-generic
@@ -76,7 +76,7 @@ In order to test the whole installation package:
  exit() 
 ```
 
-##### Downloading IntP:
+#### Downloading IntP:
 ```shell
 function gdrive_download () {
  CONFIRM=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$1" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')
