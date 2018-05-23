@@ -5,6 +5,7 @@ permalink: /Documentation/
 ---
 
 #### Requirements:
+    - Ubuntu Server 16.04.2
     - linux kernel 4.4.0-75
     - dbgsym
     - make
@@ -12,6 +13,10 @@ permalink: /Documentation/
     - python
     - systemtap - 3.1
     
+
+###### Download Ubuntu Server 16.04.2: 
+
+Download Ubuntu Server 16.04.2 [download link](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
 
 ###### Installing Linux Headers: 
 
@@ -67,7 +72,7 @@ reboot
 In order to test the whole installation package:
 
 ```shell
- stap  -e  ’probe  begin   printf(”Hello,  World!”);
+ stap  -e  ’probe  begin   printf(”Hello,  World!”)’;
  exit() 
 ```
 
@@ -87,7 +92,7 @@ gdrive_download 0B4kSFaKe-Rt9dnY2LThVWEZ1dEdjNTQ3UFdTclZmYUtQRFBB intp.stp
 ### Execution
 It is important to note that you must run the command stap as root.
 ```shell
-stap –suppress-handler-errors -g son0.stp ApplicationName
+stap --suppress-handler-errors -g son0.stp ApplicationName
 ```
 
 
