@@ -90,17 +90,18 @@ gdrive_download 0B4kSFaKe-Rt9dnY2LThVWEZ1dEdjNTQ3UFdTclZmYUtQRFBB intp.stp
 ```
 
 ### Execution
-It is important to note that you must run the command stap as root.
+Notice that you must run the command stap as root.
 ```shell
-stap --suppress-handler-errors -g son0.stp ApplicationName
+stap --suppress-handler-errors -g intp.stp ApplicationName
 ```
 
 
 ### Outputs
+Notice that you must run this command as root.
 Receiving Return:
 
 ```shell
-$ watch -n2 -d cat /proc/systemtap/stap_*/intestbench
+watch -n2 -d cat /proc/systemtap/stap_*/intestbench
 ```
 
 IntP returns the interference metrics for CPU, disk, memory, network, and cache. More specifically, it returns the following metrics:
