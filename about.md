@@ -97,7 +97,7 @@ stap --suppress-handler-errors -g intp.stp ApplicationName
 
 
 ### Outputs
-Notice that you must run this command as root.
+Notice that you must run this command as root.  
 Receiving Return:
 
 ```shell
