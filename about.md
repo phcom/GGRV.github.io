@@ -70,8 +70,7 @@ reboot
 In order to test the whole installation package:
 
 ```shell
- stap  -e  ’probe  begin   printf(”Hello,  World!”)’;
- exit() 
+ stap  -e  ’probe  begin   printf(”Hello,  World!”)’; 
 ```
 
 #### Downloading IntP:
