@@ -40,9 +40,7 @@ sudo apt-get install linux-image-4.4.0-75-generic-dbgsym
 ```
 ##### Installing make, g++ and python:
 ```shell
-sudo apt-get install make
-sudo apt-get install g++
-sudo apt-get install python
+sudo apt-get install make g++ python
 ```
 
 ##### Installing systemtap:
@@ -71,7 +69,6 @@ In order to test the whole installation package:
 
 ```shell
  stap  -e  ’probe  begin   printf(”Hello,  World!”)’;
- exit() 
 ```
 
 #### Downloading IntP:
