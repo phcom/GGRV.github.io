@@ -16,7 +16,7 @@ permalink: /Documentation/
 
 ##### Download Ubuntu Server 16.04.2: 
 
-Download Ubuntu Server 16.04.2 [download link](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
+[download link](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
 
 ##### Installing Linux Headers: 
 
