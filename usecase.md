@@ -28,15 +28,39 @@ watch -n2 -d cat /proc/systemtap/stap_*/intestbench
 
 Examples:  
 
-stress-ng --cpu 1&
+stress-ng --cpu 12
 ```shell
 netp    nets    blk     mbw     llcmr   llcocc  cpu
-0.00    0.00    0.00    0.00    0.00    0.00    0.99
+0.00    0.00    0.00    0.00    0.00    0.83    0.50
 ```
 
-stress-ng --hdd 2
+stress-ng --hdd 5
 
 ```shell
 netp    nets    blk     mbw     llcmr   llcocc  cpu
-0.00    0.00    0.14    0.00    0.00    0.00    0.00
+0.00    0.00    0.31    0.00    0.00    0.56    0.00
 ```
+
+stress-ng --malloc 1
+
+```shell
+netp    nets    blk     mbw     llcmr   llcocc  cpu
+0.00    0.00    0.00    0.10    0.08    0.51    0.07
+```
+
+stress-ng --cache 1
+
+```shell
+netp    nets    blk     mbw     llcmr   llcocc  cpu
+0.00    0.00    0.00    0.00    0.05    0.89    0.07
+```
+
+These metrics represents the inteference caused by the monitored application ( In this case stress-ng application): 
+
+* netp - percentage of physical network
+* nets - percentage of network queue interference.
+* blk - percentage of disk interference.
+* mbw - percentage of memory bus interference.
+* llcmr - percentage of cache miss.
+* llocc - percentage of cache interference.
+* cpu - percentage of cpu interference.
