@@ -28,7 +28,7 @@ The tests below were executed in a Blade server PowerEdge M630 with 24 cores and
 stap --suppress-handler-errors -g intp.stp stress-ng
 ```
  
- The second output command:
+ The second with output command:
 
 ```shell
 watch -n2 -d cat /proc/systemtap/stap_*/intestbench
