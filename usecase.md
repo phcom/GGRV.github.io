@@ -4,7 +4,7 @@ title: Using IntP with stress-ng application
 permalink: /Experiments/
 ---
 
-Stress−ng is a tool to load and stress a computer system. You can use it by downloading and installing with the follow command:
+**Stress−ng** is a tool to load and stress a computer system. You can use it by downloading and installing with the follow command:
 
 ```shell
 apt-get install stress-ng
@@ -21,6 +21,26 @@ In order to test most off all outputs data given by IntP, the follows command li
     * start N workers that perform random wide spread memory read and writes to thrash the CPU cache.
 
 ## Tests and Outputs
+
+Taking into account that the tests below were executed in a Server Machine Power Edge M630 with 24 cores and 32 GB of memory. To execute all tests we used 3 Shell Terminals. One with the IntP Command:
+
+```shel
+stap --suppress-handler-errors -g intp.stp stress-ng
+```
+ 
+ The second with the output data by IntP:
+
+```shel
+watch -n2 -d cat /proc/systemtap/stap_*/intestbench
+```
+ 
+ The last Terminal was used to run the application (Stress-ng):
+
+```shel
+stress-ng param ... 
+```
+ 
+
 
 stress-ng --cpu 12
 ```shell
