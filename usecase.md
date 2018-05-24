@@ -55,7 +55,7 @@ netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.05    0.89    0.07
 ```
 
-These metrics represents the inteference caused by the monitored application ( In this case stress-ng application): 
+These metrics represents the interference caused by the monitored application ( In this case stress-ng application): 
 
 * netp - percentage of physical network
 * nets - percentage of network queue interference.
