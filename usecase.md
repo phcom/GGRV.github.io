@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Using IntP with stress-ng application
-permalink: /Usecase/
+permalink: /Experiments/
 ---
 
 Stress−ng is a tool to load and stress a computer system. You can use it by downloading and installing with the follow command:
@@ -9,7 +9,7 @@ Stress−ng is a tool to load and stress a computer system. You can use it by do
 ```shell
 apt-get install stress-ng
 ```
-In order to test most off all outputs data given by IntP, the follows commands were used:
+In order to test most off all outputs data given by IntP, the follows command lines were used:
 
 * stress-ng --cpu N
     * start N workers continually writing, reading and removing temporary files.
@@ -20,7 +20,7 @@ In order to test most off all outputs data given by IntP, the follows commands w
 * stress-ng --cache N
     * start N workers that perform random wide spread memory read and writes to thrash the CPU cache.
 
-##Tests and Outputs
+## Tests and Outputs
 
 stress-ng --cpu 12
 ```shell
