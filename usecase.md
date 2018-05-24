@@ -10,9 +10,13 @@ apt-get install stress-ng
 ## Stress-ng tutorial using IntP:
 Please execute the commands below, to start the process of stress:
 
-* stress-ng --cpu 1&
-* strees-ng --hdd 1&
+* stress-ng --cpu N
+    * start N workers continually writing, reading and removing temporary files.
+* stress-ng --hdd N
+* stress-ng --malloc N
+* stress-ng --cache N
 
+Where "N" means number of threads. 
 
 *Before using intP command, you must open another tab in order to monitor the stressed resource.
 
