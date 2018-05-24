@@ -68,11 +68,7 @@ reboot
 In order to test the whole installation package:
 
 ```shell
-<<<<<<< HEAD
  stap  -e  ’probe  begin   printf(”Hello,  World!”)’; 
-=======
- stap  -e  ’probe  begin   printf(”Hello,  World!”)’;
->>>>>>> ad0b661046f9d86f39ebd25adc05f801bc11d2c1
 ```
 
 #### Downloading IntP:

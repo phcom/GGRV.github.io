@@ -43,6 +43,7 @@
           <nav>
             <a href="/">Home</a>
             <a href="/Documentation">Documentation</a>
+            <a href="/Usecase">Experiments</a>            
             <a href="/Related">Related Works</a>
           </nav>
         </header>
@@ -88,9 +89,7 @@ deb http://ddebs.ubuntu.com </span><span class="k">$(</span>lsb_release <span cl
 
 </code></pre></div></div>
 <h5 id="installing-make-g-and-python">Installing make, g++ and python:</h5>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>make
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>g++
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>python
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>make g++ python
 </code></pre></div></div>
 
 <h5 id="installing-systemtap">Installing systemtap:</h5>
@@ -116,8 +115,7 @@ reboot
 
 <p>In order to test the whole installation package:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> stap  <span class="nt">-e</span>  ’probe  begin   <span class="nb">printf</span><span class="o">(</span>”Hello,  World!”<span class="o">)</span>’<span class="p">;</span>
- <span class="nb">exit</span><span class="o">()</span> 
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> stap  <span class="nt">-e</span>  ’probe  begin   <span class="nb">printf</span><span class="o">(</span>”Hello,  World!”<span class="o">)</span>’<span class="p">;</span> 
 </code></pre></div></div>
 
 <h4 id="downloading-intp">Downloading IntP:</h4>
