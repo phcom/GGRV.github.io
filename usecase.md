@@ -42,27 +42,27 @@ stress−ng [OPTION [ARG]] ...
  
 ## Results provided by our tool: 
 
-$ stress-ng --cpu 12
+**$ stress-ng --cpu 12**
 ```shell
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.00    0.83    0.50
 ```
 
-$ stress-ng --hdd 5
+**$ stress-ng --hdd 5**
 
 ```shell
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.31    0.00    0.00    0.56    0.00
 ```
 
-$ stress-ng --malloc 1
+**$ stress-ng --malloc 1**
 
 ```shell
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.10    0.08    0.51    0.07
 ```
 
-$ stress-ng --cache 1
+**$ stress-ng --cache 1**
 
 ```shell
 netp    nets    blk     mbw     llcmr   llcocc  cpu
