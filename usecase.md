@@ -22,7 +22,7 @@ In order to test most off all outputs data given by IntP, the follows command li
 
 ## Tests and Outputs
 
-The tests below were executed in a Blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all tests we used 3 Shell Terminals.   One with the IntP Command:
+The tests below were executed in a Blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all tests we used 3 Shell Terminals. First with IntP Command:
 
 ```shell
 stap --suppress-handler-errors -g intp.stp stress-ng
