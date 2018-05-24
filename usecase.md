@@ -28,7 +28,7 @@ The tests below were executed in a Server Machine Power Edge M630 with 24 cores 
 stap --suppress-handler-errors -g intp.stp stress-ng
 ```
  
- The second with the output data by IntP:
+ The second output command:
 
 ```shell
 watch -n2 -d cat /proc/systemtap/stap_*/intestbench
@@ -37,9 +37,10 @@ watch -n2 -d cat /proc/systemtap/stap_*/intestbench
  The last Terminal was used to run the application (Stress-ng):
 
 ```shell
-stress-ng param ... 
+stress−ng [OPTION [ARG]] ...
 ```
  
+## Results by IntP 
 
 
 stress-ng --cpu 12
