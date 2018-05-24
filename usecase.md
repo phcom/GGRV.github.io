@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Installing stress-ng thourgh apt-get repository:
+title: Installing stress-ng thourgh apt-get repository
 permalink: /Usecase/
 ---
 
