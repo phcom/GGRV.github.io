@@ -4,7 +4,7 @@ title: Using IntP with stress-ng application
 permalink: /Experiments/
 ---
 
-**Stress−ng** is a tool that loads and cause stress into a a computer system or within an application. You can use it by downloading and installing to your system with the follow command:
+**Stress−ng** is a tool that loads and causes stress into a a computer system or within an application. You can use it by downloading and installing to your system with the follow command:
 
 ```shell
 apt-get install stress-ng
