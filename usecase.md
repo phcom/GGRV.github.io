@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Installing stress-ng through apt-get repository
+title: Using IntP with stress-ng application
 permalink: /Usecase/
 ---
+
+Stress−ng is a tool to load and stress a computer system. You can use it by downloading with follow command:
 
 ```shell
 apt-get install stress-ng
