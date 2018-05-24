@@ -34,7 +34,7 @@ stap --suppress-handler-errors -g intp.stp stress-ng
 watch -n2 -d cat /proc/systemtap/stap_*/intestbench
 ```
  
- The last Terminal was used to run the application (Stress-ng):
+ The last terminal was used to run the application (stress-ng):
 
 ```shell
 stress−ng [OPTION [ARG]] ...
@@ -69,7 +69,7 @@ netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.05    0.89    0.07
 ```
 
-These metrics represents the interference caused by the monitored application ( In this case stress-ng application): 
+These metrics represents the interference caused by the monitored application (in this case stress-ng application): 
 
 * netp - percentage of physical network
 * nets - percentage of network queue interference.
