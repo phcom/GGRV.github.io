@@ -12,17 +12,17 @@ apt-get install stress-ng
 In order to test most of all data outputs given by IntP, the follows command lines were used:
 
 * stress-ng --cpu N
-    * start N workers continually writing, reading and removing temporary files.
+    * start N workers continuously writing, reading and removing temporary files.
 * stress-ng --hdd N
-    * start N workers continually writing, reading and removing temporary files. The default mode is to stress test sequential writes and reads. 
+    * start N workers continuously writing, reading and removing temporary files. The default mode is to stress test sequential writes and reads. 
 * stress-ng --malloc N
-    * start N workers continuously calling malloc.
+    * start N workers continuously calling malloc function.
 * stress-ng --cache N
-    * start N workers that perform random wide spread memory read and writes to thrash the CPU cache.
+    * start N workers that performs random-wide spread memory read and writes to stress the CPU cache. 
 
 ## Tests and Outputs
 
-The tests below were executed in a Blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all tests we used 3 Shell Terminals. First with IntP command:
+The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all of our tests, we used 3 shell terminals. First with IntP command:
 
 ```shell
 stap --suppress-handler-errors -g intp.stp stress-ng
