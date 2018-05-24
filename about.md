@@ -14,9 +14,7 @@ permalink: /Documentation/
     - systemtap - 3.1
     
 
-##### Download Ubuntu Server 16.04.2: 
-
-[download link](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
+##### Download Ubuntu Server 16.04.2: [download](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
 
 ##### Installing Linux Headers: 
 
@@ -70,7 +68,11 @@ reboot
 In order to test the whole installation package:
 
 ```shell
+<<<<<<< HEAD
  stap  -e  ’probe  begin   printf(”Hello,  World!”)’; 
+=======
+ stap  -e  ’probe  begin   printf(”Hello,  World!”)’;
+>>>>>>> ad0b661046f9d86f39ebd25adc05f801bc11d2c1
 ```
 
 #### Downloading IntP:
