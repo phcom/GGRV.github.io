@@ -16,5 +16,5 @@ This work used **IntP** as a tool to measure the interference levels that the ap
 
 In conclusion, by using these placement policies, it was showed that multi-tier applications can better utilize the infrastructure, using the same infrastructure but with an improved performance.
 
-* for more details, [[here]](http://www.lbd.dcc.ufmg.br/colecoes/wscad/2017/020.pdf) is the link to download the complete work.
+* for more details, click [[here]](http://www.lbd.dcc.ufmg.br/colecoes/wscad/2017/020.pdf) to download the complete paper.
 
