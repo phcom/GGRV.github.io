@@ -24,9 +24,9 @@ In order to test most of all data outputs given by IntP, the follows command lin
 
 The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all of our tests, we used 3 shell terminals. First with IntP command:
 
-``shell
+```shell
 stap --suppress-handler-errors -g intp.stp stress-ng
-``
+```
  
  The second with output command:
 
