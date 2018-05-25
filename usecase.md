@@ -47,6 +47,7 @@ stress−ng [OPTION [ARG]] ...
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.00    0.83    0.50
 ```
+This means that, when these parameters were captured in given application point, the application was using 50% of all cpu resources and 83% of last layer cache the hardware had. 
 
 **$ stress-ng --hdd 5**
 
@@ -54,6 +55,7 @@ netp    nets    blk     mbw     llcmr   llcocc  cpu
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.31    0.00    0.00    0.56    0.00
 ```
+This means that, when these parameters were captured in given application point, the application was using 31% of all disk resources and 56% of last layer cache the hardware had.
 
 **$ stress-ng --malloc 1**
 
