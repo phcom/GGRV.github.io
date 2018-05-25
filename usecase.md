@@ -4,7 +4,7 @@ title: Using IntP with stress-ng application
 permalink: /Experiments/
 ---
 
-**Stress−ng** is a tool that loads and causes stress into a a computer system or within an application. You can use it by downloading and installing to your system with the follow command:
+**Stress−ng** is a tool that loads and causes stress into a computer system or within an application. You can use it by downloading and installing to your system with the follow command:
 
 ```shell
 apt-get install stress-ng
@@ -81,7 +81,7 @@ These metrics represents the interference caused by the monitored application (i
 
 ## Storing the Results
 
-The above results were captured at some point while the application was running. If you are interested in capturing the history of the parameters given by the IntP during the life cycle of the application, the following command can be used:
+The above results were captured at some point while the application was running. If you are interested in capturing the history of the parameters given by IntP during the life cycle of the application, the following command can be used:
 
 ```shell
 watch -n1 -d 'tail /proc/systemtap/stap_*/intestbench -n 1 >> output.txt'
