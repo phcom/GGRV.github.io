@@ -12,7 +12,7 @@ There are a great number of research works focusing on the placement of cloud ap
 
 In this case, it was created a placement policies that aim to improve the performance of multi-tier applications by analyzing the interference and network affinity characteristics of each tier. These characteristics work as a force pushing tiers closer or farther depending on the interference and affinity levels. 
 
-This work used **INTP** as a tool to measure the interference levels that the application causes on the infrastructure.
+This work used **IntP** as a tool to measure the interference levels that the application causes on the infrastructure.
 
 In conclusion, by using these placement policies, it was showed that multi-tier applications can better utilize the infrastructure, using the same infrastructure but with an improved performance.
 
