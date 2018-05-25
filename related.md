@@ -5,7 +5,7 @@ permalink: /Related/
 ---
 
 
-## Policies for Interference and Affinity-Aware Placement of  
+## Policies for Interference and Affinity-Aware Placement of Multi-tier Applications in Private Cloud Infrastructures
 
 
 There are a great number of research works focusing on the placement of cloud applications. While some of these works take into consideration performance, most of them are concerned about reducing infrastructure costs. Besides, **none of them** take into consideration the interference and network affinity characteristics. 
