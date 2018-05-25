@@ -63,7 +63,7 @@ Here, the application was using 31% of all disk (**blk**) resources and 56% of l
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.10    0.08    0.51    0.07
 ```
-The **llcmr** metric shows a ratio of cycles with outstanding LLC misses to all cycles, in this example is 8%. Also we had a percentage of memory bus interference of 10%.
+The **llcmr** metric shows a ratio of cycles with outstanding LLC misses to all cycles, in this example is 8%. Also we had a percentage of memory bus interference usage of 10%.
 
 **$ stress-ng --cache 1**
 
