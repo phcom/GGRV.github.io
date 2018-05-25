@@ -81,7 +81,7 @@ These metrics represents the interference caused by the monitored application (i
 * llocc - percentage of cache interference.
 * cpu - percentage of cpu interference.
 
-## Storing the Results
+## Saving the Results
 
 The above results were captured at some point while the application was running. If you are interested in capturing the history of the parameters given by IntP during the life cycle of the application, the following command can be used:
 
