@@ -55,7 +55,7 @@ This means that, when these parameters were captured in given application point,
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.31    0.00    0.00    0.56    0.00
 ```
-This means that, when these parameters were captured in given application point, the application was using 31% of all disk resources and 56% of last layer cache the hardware had.
+Here the application was using 31% of all disk resources and 56% of last layer cache the hardware had.
 
 **$ stress-ng --malloc 1**
 
