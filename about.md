@@ -101,10 +101,11 @@ watch -n2 -d cat /proc/systemtap/stap_*/intestbench
 
 IntP returns the interference metrics for CPU, disk, memory, network, and cache. More specifically, it returns the following metrics:
 
-* netp - percentage of physical network
-* nets - percentage of network queue interference.
-* blk - percentage of disk interference.
-* mbw - percentage of memory bus interference.
-* llcmr - percentage of cache miss.
-* llocc - percentage of cache interference.
-* cpu - percentage of cpu interference.
+* netp - the percentage of physical network
+* nets - the percentage of network queue interference.
+* blk - the percentage of disk interference.
+* mbw - the percentage of memory bus interference.
+* llcmr - the percentage of cache miss.
+* llocc - the percentage of cache interference.
+* cpu - the percentage of cpu interference.
+

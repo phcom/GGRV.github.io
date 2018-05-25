@@ -4,25 +4,25 @@ title: Using IntP with stress-ng application
 permalink: /Experiments/
 ---
 
-**Stress−ng** is a tool that loads and causes stress into a computer system or within an application. You can use it by downloading and installing to your system with the follow command:
+**Stress−ng** is a tool that loads and causes stress into a computer system or within an application. You can use it by downloading and installing into your system with the following command:
 
 ```shell
 apt-get install stress-ng
 ```
-In order to test most of all data outputs given by IntP, the follows command lines were used:
+To test most of the data outputs given by IntP, the follows command lines were used:
 
 * stress-ng --cpu N
-    * start N workers continuously writing, reading and removing temporary files.
+    * start N workers that are continuously writing, reading and removing temporary files.
 * stress-ng --hdd N
-    * start N workers continuously writing, reading and removing temporary files. The default mode is to stress test sequential writes and reads. 
+    * start N workers that are continuously writing, reading and removing temporary files. The default mode is to stress test sequential writes and reads. 
 * stress-ng --malloc N
-    * start N workers continuously calling malloc function.
+    * start N workers that are continuously calling malloc function.
 * stress-ng --cache N
-    * start N workers that performs random-wide spread memory read and writes to stress the CPU cache. 
+    * start N workers that are performing random-wide spread memory read and write functions to stress the CPU cache. 
 
 ## Tests and Outputs
 
-The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all of our tests, we used 3 shell terminals. First with IntP command:
+The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To perform our tests, we used 3 shell terminals. First with IntP command:
 
 ```shell
 stap --suppress-handler-errors -g intp.stp stress-ng
@@ -47,7 +47,7 @@ stress−ng [OPTION [ARG]] ...
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.00    0.83    0.50
 ```
-This means that, when these parameters were captured in given application point, the application was using 50% of all cpu (**cpu**) resources and 83% of last layer cache (**llcocc**) the hardware had. 
+When these parameters were captured in given application point, the application was using 50% of all cpu (**cpu**) resources and 83% of last layer cache (**llcocc**) the hardware had. 
 
 **$ stress-ng --hdd 5**
 
@@ -63,7 +63,7 @@ Here, the application was using 31% of all disk (**blk**) resources and 56% of l
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.10    0.08    0.51    0.07
 ```
-The **llcmr** metric shows a ratio of cycles with outstanding LLC misses to all cycles, in this example is 8%. Also we had a percentage of memory bus interference usage of 10% (**mbw**).
+The **llcmr** metric shows a ratio of cycles with outstanding LLC misses to all cycles, in this example is 8%. Also, we had a percentage of memory bus interference usage of 10% (**mbw**).
 
 **$ stress-ng --cache 1**
 
@@ -72,15 +72,15 @@ netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.05    0.89    0.07
 ```
 
-These metrics represents the interference caused by the monitored application (in this case stress-ng application): 
+These metrics represent the interference caused by the monitored application (in this case stress-ng application): 
 
-* netp - percentage of physical network
-* nets - percentage of network queue interference.
-* blk - percentage of disk interference.
-* mbw - percentage of memory bus interference.
-* llcmr - percentage of cache miss.
-* llocc - percentage of cache interference.
-* cpu - percentage of cpu interference.
+* netp - the percentage of physical network
+* nets - the percentage of network queue interference.
+* blk - the percentage of disk interference.
+* mbw - the percentage of memory bus interference.
+* llcmr - the percentage of cache miss.
+* llocc - the percentage of cache interference.
+* cpu - the percentage of cpu interference.
 
 ## Saving the Results
 
