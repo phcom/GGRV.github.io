@@ -24,9 +24,9 @@ In order to test most of all data outputs given by IntP, the follows command lin
 
 The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To execute all of our tests, we used 3 shell terminals. First with IntP command:
 
-```shell
+``shell
 stap --suppress-handler-errors -g intp.stp stress-ng
-```
+``
  
  The second with output command:
 
@@ -55,7 +55,7 @@ This means that, when these parameters were captured in given application point,
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.31    0.00    0.00    0.56    0.00
 ```
-Here the application was using 31% of all disk resources and 56% of last layer cache the hardware had.
+Here, the application was using 31% of all disk resources and 56% of last layer cache the hardware had.
 
 **$ stress-ng --malloc 1**
 
