@@ -47,7 +47,7 @@ stress−ng [OPTION [ARG]] ...
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.00    0.00    0.83    0.50
 ```
-This means that, when these parameters were captured in given application point, the application was using 50% of all cpu resources and 83% of last layer cache the hardware had. 
+This means that, when these parameters were captured in given application point, the application was using 50% of all cpu (**cpu**) resources and 83% of last layer cache (**llcocc**) the hardware had. 
 
 **$ stress-ng --hdd 5**
 
@@ -55,7 +55,7 @@ This means that, when these parameters were captured in given application point,
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.31    0.00    0.00    0.56    0.00
 ```
-Here, the application was using 31% of all disk resources and 56% of last layer cache the hardware had.
+Here, the application was using 31% of all disk (**blk**) resources and 56% of last layer cache (**llcocc**) the hardware had.
 
 **$ stress-ng --malloc 1**
 
@@ -63,6 +63,7 @@ Here, the application was using 31% of all disk resources and 56% of last layer 
 netp    nets    blk     mbw     llcmr   llcocc  cpu
 0.00    0.00    0.00    0.10    0.08    0.51    0.07
 ```
+The LLC (last-level cache) is the last, and longest-latency, level in the memory hierarchy before main memory (DRAM). Any memory requests missing here must be serviced by local or remote DRAM, with significant latency. The **llcmr** metric shows a ratio of cycles with outstanding LLC misses to all cycles, in this example is 8%. Also we had a percentage of memory bus interference of 10%.
 
 **$ stress-ng --cache 1**
 
