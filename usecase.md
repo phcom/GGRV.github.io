@@ -22,7 +22,10 @@ To test most of the data outputs given by IntP, the follows command lines were u
 
 ## Tests and Outputs
 
-The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To perform our tests, we used 3 shell terminals. First with IntP command:
+The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To perform our tests, we used 3 shell terminals in parallel. This is necessary because a terminal executes the IntP, collecting information about the chosen application. The second presents the results. The third runs the application to be monitored. 
+
+
+First with IntP command:
 
 ```shell
 stap --suppress-handler-errors -g intp.stp stress-ng
