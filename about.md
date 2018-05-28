@@ -7,8 +7,7 @@ permalink: /Documentation/
 ## Hardaware Requirements:
     - A computer with processor which supports Intel Cache Monitoring Technology (CMT)
 
-    For more information about CMT click 
-    [here](https://software.intel.com/en-us/blogs/2014/12/11/intel-s-cache-monitoring-technology-software-visible-interfaces)
+##### For more information about CMT click [here](https://software.intel.com/en-us/blogs/2014/12/11/intel-s-cache-monitoring-technology-software-visible-interfaces)
 
 ## Software Requirements:
     - Ubuntu Server 16.04.2
@@ -20,7 +19,8 @@ permalink: /Documentation/
     - systemtap - 3.1
     
 
-##### Download Ubuntu Server 16.04.2: [download](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
+##### Download Ubuntu Server 16.04.2: 
+[download](http://old-releases.ubuntu.com/releases/16.04.2/ubuntu-16.04.2-server-amd64.iso)
 
 ##### Installing Linux Headers: 
 
