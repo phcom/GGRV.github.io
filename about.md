@@ -5,7 +5,10 @@ permalink: /Documentation/
 ---
 
 ## Hardaware Requirements:
-    - A computer with processor wich supports Intel Cache Monitoring Technology (CMT)
+    - A computer with processor which supports Intel Cache Monitoring Technology (CMT)
+
+    For more information about CMT click 
+    [here](https://software.intel.com/en-us/blogs/2014/12/11/intel-s-cache-monitoring-technology-software-visible-interfaces)
 
 ## Software Requirements:
     - Ubuntu Server 16.04.2
