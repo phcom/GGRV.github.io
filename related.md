@@ -9,8 +9,6 @@ permalink: /Related/
 ## IntP: Quantifying cross-application interference in SMP machines via resource-driven instrumentation
 
 
-
-
 Large-scale virtual datacenters host tens of thousands of diverse applications each day. However, resource contention-related interference between co-located applications
 and the difficulty to match them to one of the many hardware platforms can degrade performance, affecting the quality of
 service and compromising user experience. Understanding the sources of noise that harm performance and better managing where application are hosted can significantly impact how datacenters operate. This paper presents the IntP—a instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. IntP not only measures the
@@ -19,7 +17,7 @@ applications causes one another, but also points out which source of noise is mo
 enables accurate prediction of the performance degradation that results from contention on shared resources. In addition,
 it provides outputs for better application placement strategies, which makes datacenter resource efficient and more cost effective.
 
-* for more details, click [[here]](http://www.lbd.dcc.ufmg.br/colecoes/wscad/2017/020.pdf) to download the complete paper.
+* for more details, click [[here]](www.pucrs.br) to download the complete paper.
 
 
 
