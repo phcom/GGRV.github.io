@@ -17,7 +17,7 @@ applications causes one another, but also points out which source of noise is mo
 enables accurate prediction of the performance degradation that results from contention on shared resources. In addition,
 it provides outputs for better application placement strategies, which makes datacenter resource efficient and more cost effective.
 
-* for more details, click [[here]](http://www.pucrs.br) to download the complete paper.
+* for more details, click [[here]](https://drive.google.com/file/d/1qC0-ji4InuWvAPo1LI7tUnYjZh0TKXvc/view?usp=sharing) to download the complete paper.
 
 
 
