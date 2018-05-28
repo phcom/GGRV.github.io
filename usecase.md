@@ -9,7 +9,7 @@ permalink: /Experiments/
 ```shell
 apt-get install stress-ng
 ```
-To test most of the data outputs given by IntP, the follows command lines were used:
+To test most of the data outputs given by IntP, the follow command lines were used:
 
 * stress-ng --cpu N
     * start N workers that are continuously writing, reading and removing temporary files.
@@ -87,7 +87,7 @@ These metrics represent the interference caused by the monitored application (in
 
 ## Saving the Results
 
-The above results were captured at some point while the application was running. If you are interested in obtaining the history of the outputs given by IntP during the life cycle of the application, the following command can be used:
+The result above were captured at some point while the application was running. If you are interested in obtaining the history of the outputs given by IntP during the life cycle of the application, the following command can be used:
 
 ```shell
 watch -n1 -d 'tail /proc/systemtap/stap_*/intestbench -n 1 >> output.txt'
