@@ -4,7 +4,10 @@ title: Manual Installation
 permalink: /Documentation/
 ---
 
-## Requirements:
+## Hardaware Requirements:
+    - A computer with processor wich supports Intel Cache Monitoring Technology (CMT)
+
+## Software Requirements:
     - Ubuntu Server 16.04.2
     - linux kernel 4.4.0-75
     - dbgsym
