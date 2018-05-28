@@ -11,7 +11,7 @@ permalink: /Related/
 
 Large-scale virtual datacenters host tens of thousands of diverse applications each day. However, resource contention-related interference between co-located applications
 and the difficulty to match them to one of the many hardware platforms can degrade performance, affecting the quality of
-service and compromising user experience. Understanding the sources of noise that harm performance and better managing where application are hosted can significantly impact how datacenters operate. This paper presents the IntP—a instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. IntP not only measures the
+service and compromising user experience. Understanding the sources of noise that harm performance and better managing where application are hosted can significantly impact how datacenters operate. This paper presents the **IntP** — a instrumentation tool to quantify the level of interference an application puts on each hardware’s subsystem. IntP not only measures the
 amount of noise an application is susceptible and the interference
 applications causes one another, but also points out which source of noise is more disturbing performance. This instrumentation
 enables accurate prediction of the performance degradation that results from contention on shared resources. In addition,
