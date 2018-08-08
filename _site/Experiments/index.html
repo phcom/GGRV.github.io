@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using IntP with stress-ng application – GGRV - Dell PUCRS – GGRV is an interdisciplinary research group at PUCRS. We seek to facilitate understanding of the infraestructure, cloud and hpc development, and resource contention infrastructure worldwide problems.</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="GGRV is an interdisciplinary research group at PUCRS. We seek to facilitate understanding of the infraestructure, cloud and hpc development, and resource contention infrastructure worldwide problems.">
+    <meta property="og:description" content="GGRV is an interdisciplinary research group at PUCRS. We seek to facilitate understanding of the infraestructure, cloud and hpc development, and resource contention infrastructure worldwide problems." />
+    
+    <meta name="author" content="GGRV - Dell PUCRS" />
+
+    
+    <meta property="og:title" content="Using IntP with stress-ng application" />
+    <meta property="twitter:title" content="Using IntP with stress-ng application" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="GGRV - Dell PUCRS - GGRV is an interdisciplinary research group at PUCRS. We seek to facilitate understanding of the infraestructure, cloud and hpc development, and resource contention infrastructure worldwide problems." href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">GGRV - Dell/PUCRS</a></h1>
+            <p class="site-description"> GGRV is an interdisciplinary research group at PUCRS. We seek to facilitate understanding of the infraestructure, cloud and hpc development, and resource contention infrastructure worldwide problems.
+              </p>
+          </div>
+        </header>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a class="dropbtn">IntP</a>
+            <div class="dropdown-content">
+              <a href="/about">About</a>
+              <a href="/Documentation">Documentation</a>
+              <a href="/Experiments">Experiments</a>
+              <a href="/Related">Related Works</a>
+            </div>
+          </li>
+          <li class="dropdown">
+              <a class="dropbtn">CloudSim</a>
+              <div class="dropdown-content">
+                <a href="/about">About</a>
+                <a href="/Documentation">Documentation</a>
+                <a href="/Experiments">Experiments</a>
+                <a href="/Related">Related Works</a>
+              </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn">CIAPA</a>
+                <div class="dropdown-content">
+                  <a href="/about">About</a>
+                  <a href="/Documentation">Documentation</a>
+                  <a href="/Experiments">Experiments</a>
+                  <a href="/Related">Related Works</a>
+                </div>
+              </li>  
+        </ul>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Using IntP with stress-ng application</h1>
+
+  <div class="entry">
+    <p><strong>Stress−ng</strong> is a tool that loads and causes stress into a computer system or within an application. You can use it by downloading and installing into your system with the following command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>stress-ng
+</code></pre></div></div>
+<p>To test most of the data outputs given by IntP, the follow command lines were used:</p>
+
+<ul>
+  <li>stress-ng –cpu N
+    <ul>
+      <li>start N workers that are continuously writing, reading and removing temporary files.</li>
+    </ul>
+  </li>
+  <li>stress-ng –hdd N
+    <ul>
+      <li>start N workers that are continuously writing, reading and removing temporary files. The default mode is to stress test sequential writes and reads.</li>
+    </ul>
+  </li>
+  <li>stress-ng –malloc N
+    <ul>
+      <li>start N workers that are continuously calling malloc function.</li>
+    </ul>
+  </li>
+  <li>stress-ng –cache N
+    <ul>
+      <li>start N workers that are performing random-wide spread memory read and write functions to stress the CPU cache.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tests-and-outputs">Tests and Outputs</h2>
+
+<p>The tests below were executed in a blade server PowerEdge M630 with 24 cores and 32 GB of memory. To perform our tests, we used 3 shell terminals in parallel. This is necessary because a terminal executes the IntP, collecting information about the chosen application. The second presents the results and the third runs the application to be monitored.</p>
+
+<p>First with IntP command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stap <span class="nt">--suppress-handler-errors</span> <span class="nt">-g</span> intp.stp stress-ng
+</code></pre></div></div>
+
+<p>The second with output command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watch <span class="nt">-n2</span> <span class="nt">-d</span> <span class="nb">cat</span> /proc/systemtap/stap_<span class="k">*</span>/intestbench
+</code></pre></div></div>
+
+<p>The last terminal was used to run the application (stress-ng):</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stress−ng <span class="o">[</span>OPTION <span class="o">[</span>ARG]] ...
+</code></pre></div></div>
+
+<h2 id="results-provided-by-our-tool">Results provided by our tool:</h2>
+
+<p><strong>$ stress-ng –cpu 12</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netp    nets    blk     mbw     llcmr   llcocc  cpu
+0.00    0.00    0.00    0.00    0.00    0.83    0.50
+</code></pre></div></div>
+<p>When these parameters were captured in given application point, the application was using 50% of all cpu (<strong>cpu</strong>) resources and 83% of last layer cache (<strong>llcocc</strong>) the hardware had.</p>
+
+<p><strong>$ stress-ng –hdd 5</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netp    nets    blk     mbw     llcmr   llcocc  cpu
+0.00    0.00    0.31    0.00    0.00    0.56    0.00
+</code></pre></div></div>
+<p>Here, the application was using 31% of all disk (<strong>blk</strong>) resources and 56% of last layer cache (<strong>llcocc</strong>) the hardware had.</p>
+
+<p><strong>$ stress-ng –malloc 1</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netp    nets    blk     mbw     llcmr   llcocc  cpu
+0.00    0.00    0.00    0.10    0.08    0.51    0.07
+</code></pre></div></div>
+<p>The <strong>llcmr</strong> metric shows a ratio of cycles with outstanding LLC misses to all cycles, in this example is 8%. Also, we had a percentage of memory bus interference usage of 10% (<strong>mbw</strong>).</p>
+
+<p><strong>$ stress-ng –cache 1</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netp    nets    blk     mbw     llcmr   llcocc  cpu
+0.00    0.00    0.00    0.00    0.05    0.89    0.07
+</code></pre></div></div>
+
+<p>These metrics represent the interference caused by the monitored application (in this case stress-ng application):</p>
+
+<ul>
+  <li>netp - the percentage of physical network</li>
+  <li>nets - the percentage of network queue interference.</li>
+  <li>blk - the percentage of disk interference.</li>
+  <li>mbw - the percentage of memory bus interference.</li>
+  <li>llcmr - the percentage of cache miss.</li>
+  <li>llocc - the percentage of cache interference.</li>
+  <li>cpu - the percentage of cpu interference.</li>
+</ul>
+
+<h2 id="saving-the-results">Saving the Results</h2>
+
+<p>The result above were captured at some point while the application was running. If you are interested in obtaining the history of the outputs given by IntP during the life cycle of the application, the following command can be used:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watch <span class="nt">-n1</span> <span class="nt">-d</span> <span class="s1">'tail /proc/systemtap/stap_*/intestbench -n 1 &gt;&gt; output.txt'</span>
+</code></pre></div></div>
+
+<p>The file created by the previous command called <strong>output.txt</strong> contains the results generated by intP every second.</p>
+
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/NatanaelKun/NatanaelKun.github.io"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
